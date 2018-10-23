@@ -1,4 +1,4 @@
-package org.marcestarlet.datastructures;
+package org.marcestarlet.datastructure.hash;
 
 /**
  * HashTable 

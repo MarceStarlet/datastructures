@@ -1,4 +1,4 @@
-package org.marcestarlet.datastructures;
+package org.marcestarlet.datastructure.hash;
 
 import java.util.LinkedList;
 import java.util.Optional;

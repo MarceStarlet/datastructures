@@ -1,4 +1,4 @@
-package org.marcestarlet.datastructures;
+package org.marcestarlet.datastructure.hash;
 
 /**
  * HashEntry<int,value> for the HashTable implementation
