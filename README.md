@@ -1,2 +1,2 @@
 # datastructures
-My code implementation of some algorithms and data structures
+My code implementation of some data structures
