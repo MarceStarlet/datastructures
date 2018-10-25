@@ -88,8 +88,8 @@ public class HashTableImp<T> implements HashTable<T>{
 		for(int i = 0; i < HASTABLE_SIZE; i++){
 			entryList = hashTable[i];
 			if(null != entryList){
-				entryList.stream().forEach(e -> str.append("<").append(e.getKey())
-					.append(",").append(e.getValue()).append(">").append(","));
+				entryList.stream().forEach(e -> str.append("{").append(e.getKey())
+					.append(",").append(e.getValue()).append("}").append(","));
 			}
 		}
 		str.replace(str.length()-1, str.length(), "");

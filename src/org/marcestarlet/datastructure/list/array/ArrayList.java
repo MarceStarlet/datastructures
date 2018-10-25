@@ -1,15 +1,17 @@
-package org.marcestarlet.datastructure.array;
+package org.marcestarlet.datastructure.list.array;
+
+import org.marcestarlet.datastructure.list.List;
 
 /**
- * DynamicArray (ArrayList) Implementation
- * A simple dynamic array implementation with the three
- * basic operations: add, remove and get.
- * This dynamic array doubles is size when needed.
+ * ArrayList implementation
+ * A simple dynamic array implementation with the four
+ * basic operations: add, remove, get and size.
+ * This dynamic array doubles its size when needed.
  * Its initial size is 10
  * @author MarceStarlet
  * @param <T>
  */
-public class DynamicArrayImp<T> implements DynamicArray<T>{
+public class ArrayList<T> implements List<T> {
 
     // the array initial size
     private static int INIT_SIZE = 10;
@@ -19,12 +21,13 @@ public class DynamicArrayImp<T> implements DynamicArray<T>{
     // to handle the current elements in the array.size()
     private int last_index = 0;
 
-    public DynamicArrayImp(){
+    public ArrayList(){
         // create the array with the default initial size
         array = (T[]) new Object[INIT_SIZE];
         current_size = INIT_SIZE;
     }
 
+    @Override
     public boolean add(T value){
         try {
             // do we need to increase the size of the array?
@@ -42,21 +45,29 @@ public class DynamicArrayImp<T> implements DynamicArray<T>{
         return true;
     }
 
-    public void remove(int index) throws IndexOutOfBoundsException {
+    @Override
+    public boolean remove(int index) throws IndexOutOfBoundsException {
         // index is not valid?
         if( index < 0 || index > size() ) {
             throw new IndexOutOfBoundsException();
         }
 
-        if( index <= last_index ) { // only remove if index is in range
-            for (int i = index; i < last_index; i++) {
-                array[i] = array[i + 1]; // move positions
-            }
+        try {
+            if (index <= last_index) { // only remove if index is in range
+                for (int i = index; i < last_index; i++) {
+                    array[i] = array[i + 1]; // move positions
+                }
 
-            last_index = last_index - 1;
+                last_index = last_index - 1;
+            }
+        }catch(Exception e){
+            return false;
         }
+
+        return true;
     }
 
+    @Override
     public T get(int index) throws IndexOutOfBoundsException {
         // index is not valid?
         if( index < 0 || index > size() ) {
@@ -89,5 +100,17 @@ public class DynamicArrayImp<T> implements DynamicArray<T>{
         }
 
         array = newArray; // re-assign
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder str = new StringBuilder("");
+        str.append("ArrayList={");
+        for (int i = 0; i < size(); i++){
+            str.append(array[i]).append(",");
+        }
+        str.replace(str.length()-1, str.length(), "}");
+
+        return str.toString();
     }
 }

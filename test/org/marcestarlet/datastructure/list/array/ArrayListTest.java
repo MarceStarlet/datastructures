@@ -1,15 +1,16 @@
-package org.marcestarlet.datastructure.array;
+package org.marcestarlet.datastructure.list.array;
 
 import org.junit.Test;
+import org.marcestarlet.datastructure.list.List;
+import org.marcestarlet.datastructure.list.array.ArrayList;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
-public class DynamicArrayImpTest {
+public class ArrayListTest {
 
     @Test
     public void addOneTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         myArrayList.add(8);
 
@@ -18,18 +19,19 @@ public class DynamicArrayImpTest {
 
     @Test
     public void addElevenTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         for(int i = 0; i < 11; i++){
             myArrayList.add(i);
         }
 
+        System.out.println(myArrayList.toString());
         assertEquals(11, myArrayList.size());
     }
 
     @Test
     public void removeOneNumOfElementsTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         for(int i = 1; i <= 5; i++){
             myArrayList.add(i);
@@ -44,7 +46,7 @@ public class DynamicArrayImpTest {
 
     @Test
     public void removeOneElementsTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         for(int i = 1; i <= 5; i++){
             myArrayList.add(i);
@@ -61,7 +63,7 @@ public class DynamicArrayImpTest {
 
     @Test
     public void removeLastElementTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         for(int i = 1; i <= 5; i++){
             myArrayList.add(i);
@@ -78,14 +80,14 @@ public class DynamicArrayImpTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void removeWrongIndexTest(){
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         myArrayList.remove(400000);
     }
 
     @Test
     public void getElevenTest() {
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         for(int i = 0; i < 11; i++){
             myArrayList.add(i);
@@ -100,7 +102,7 @@ public class DynamicArrayImpTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void getWrongIndexTest(){
-        DynamicArray<Integer> myArrayList = new DynamicArrayImp<>();
+        List<Integer> myArrayList = new ArrayList<>();
 
         myArrayList.get(400000);
     }

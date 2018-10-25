@@ -1,16 +1,16 @@
-package org.marcestarlet.datastructure.array;
+package org.marcestarlet.datastructure.list;
 
 /**
- * DynamicArray (ArrayList)
- * A simple dynamic array definition with the three
- * basic operations: add, remove and get.
+ * List
+ * A simple list definition with the four
+ * basic operations: add, remove, get and size.
  * @author MarceStarlet
  * @param <T>
  */
-public interface DynamicArray<T> {
+public interface List<T> {
 
     /**
-     * Adds a value to the array list
+     * Adds a value to the end of the list
      * @param value
      * @return true if succeed
      */
@@ -19,9 +19,10 @@ public interface DynamicArray<T> {
     /**
      * Removes the value in the position <code>index</code>
      * @param index
+     * @return true if succeed
      * @throws IndexOutOfBoundsException whether (index < 0 or index > size())
      */
-    void remove( int index ) throws IndexOutOfBoundsException;
+    boolean remove( int index ) throws IndexOutOfBoundsException;
 
     /**
      * Gets the value in the position <code>index</code>
@@ -32,7 +33,7 @@ public interface DynamicArray<T> {
     T get( int index ) throws IndexOutOfBoundsException;
 
     /**
-     * @return the number of elements in the array list
+     * @return the number of elements in the list
      */
     int size();
 }
