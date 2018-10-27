@@ -4,7 +4,7 @@ import org.marcestarlet.datastructure.list.List;
 
 /**
  * LinkedList implementation
- * A simple linked list implementation with the four
+ * A single linked list implementation with the four
  * basic operations: add, remove, get and size.
  * This linked list implementation uses an internal Node class
  * to keep the value and the pointer to the next Node in the list
@@ -15,7 +15,7 @@ public class LinkedList<T> implements List<T>{
     // the head of the list
     private Node<T> head;
     // to handle the size of the list
-    private static int size = 0;
+    private int size = 0;
 
     public LinkedList(){
         // init the head with an empty Node
