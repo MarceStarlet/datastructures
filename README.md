@@ -1,7 +1,13 @@
 # datastructures
-My code implementation of some data structures
+My own implementation of some data structures
 
 - List
     - ArrayList
     - LinkedList
-- HashTable
+- Dictionary
+    - HashTable
+- Graph
+- Tree
+    - BinarySearchTree
+    - BinaryTree
+    - Tree
