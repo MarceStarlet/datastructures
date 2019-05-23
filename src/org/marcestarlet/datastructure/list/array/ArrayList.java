@@ -2,6 +2,8 @@ package org.marcestarlet.datastructure.list.array;
 
 import org.marcestarlet.datastructure.list.List;
 
+import java.util.Arrays;
+
 /**
  * ArrayList implementation
  * A simple dynamic array implementation with the four
@@ -31,9 +33,9 @@ public class ArrayList<T> implements List<T> {
     public boolean add(T value){
         try {
             // do we need to increase the size of the array?
-            if (isIncrementNeeded()) {
+            if (isResizeNeeded()) {
                 // increment array by doubling the size
-                increaseArray();
+                resizeArray();
             }
             // add the value
             array[last_index] = value;
@@ -81,7 +83,7 @@ public class ArrayList<T> implements List<T> {
         return last_index;
     }
 
-    private boolean isIncrementNeeded(){
+    private boolean isResizeNeeded(){
         boolean incrementNeeded = false;
         // check if an increment is needed
         if(last_index == (current_size - 1)){
@@ -90,7 +92,7 @@ public class ArrayList<T> implements List<T> {
         return incrementNeeded;
     }
 
-    private void increaseArray(){
+    private void resizeArray(){
         current_size = current_size * 2; // double the size
         T[] newArray = (T[]) new Object[current_size]; // create new array and set new size
 

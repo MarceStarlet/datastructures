@@ -2,8 +2,6 @@ package org.marcestarlet.datastructure.list.array;
 
 import org.junit.Test;
 import org.marcestarlet.datastructure.list.List;
-import org.marcestarlet.datastructure.list.array.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
 public class ArrayListTest {
