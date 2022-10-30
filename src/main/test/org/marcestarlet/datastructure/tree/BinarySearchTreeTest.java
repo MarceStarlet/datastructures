@@ -1,15 +1,16 @@
 package org.marcestarlet.datastructure.tree;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class BinarySearchTreeTest {
 
     BinarySearchTree<Integer> tree;
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         tree = new BinarySearchTree<>();
 
