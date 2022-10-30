@@ -1,8 +1,10 @@
 package org.marcestarlet.datastructure.list.array;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
 import org.marcestarlet.datastructure.list.List;
-import static org.junit.Assert.assertEquals;
 
 public class ArrayListTest {
 
@@ -76,11 +78,11 @@ public class ArrayListTest {
         assertEquals(null, myArrayList.get(4));
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void removeWrongIndexTest(){
         List<Integer> myArrayList = new ArrayList<>();
 
-        myArrayList.remove(400000);
+        assertThrows(IndexOutOfBoundsException.class, () -> myArrayList.remove(400000));
     }
 
     @Test
@@ -98,10 +100,10 @@ public class ArrayListTest {
         assertEquals(11, myArrayList.size());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void getWrongIndexTest(){
         List<Integer> myArrayList = new ArrayList<>();
 
-        myArrayList.get(400000);
+        assertThrows(IndexOutOfBoundsException.class, () -> myArrayList.get(400000));
     }
 }

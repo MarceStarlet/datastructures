@@ -5,3 +5,6 @@ datastructures.iml
 target/
 .vscode/
 bin/
+.settings/
+.classpath
+.project
