@@ -1,7 +1,8 @@
 package org.marcestarlet.datastructure.hash;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class HashTableImpTest {
 
@@ -42,7 +43,7 @@ public class HashTableImpTest {
 		ht.put(130, 0.130f);
 		ht.put(2, 0.32f);
 		
-		assertEquals(new Float(0.32), ht.get(2));
+		assertEquals(0.32F, ht.get(2));
 		
 	}
 	

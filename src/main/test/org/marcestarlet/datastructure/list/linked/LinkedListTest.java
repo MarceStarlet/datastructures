@@ -1,8 +1,9 @@
 package org.marcestarlet.datastructure.list.linked;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
 
@@ -54,11 +55,11 @@ public class LinkedListTest {
         assertEquals(8, myLinkedList.get(7));
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void removeWrongIndex() {
         LinkedList<Integer> myLinkedList = new LinkedList<>();
 
-        myLinkedList.remove(9000000);
+        assertThrows(IndexOutOfBoundsException.class, () -> myLinkedList.remove(9000000));
     }
 
     @Test
@@ -111,11 +112,11 @@ public class LinkedListTest {
         assertEquals(9, myLinkedList.get(9));
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void getWrongIndex() {
         LinkedList<Integer> myLinkedList = new LinkedList<>();
 
-        myLinkedList.get(9000000);
+        assertThrows(IndexOutOfBoundsException.class, () -> myLinkedList.get(9000000));
     }
 
     @Test
