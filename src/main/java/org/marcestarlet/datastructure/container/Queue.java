@@ -1,14 +1,8 @@
 package org.marcestarlet.datastructure.container;
 
-import java.util.Hashtable;
-import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.WeakHashMap;
 
 public class Queue<T> {
-
-    Map<String,String> a = new Hashtable<>();
-
 
     private Node<T> first;
     private Node<T> last;
@@ -20,7 +14,7 @@ public class Queue<T> {
         return first == null;
     }
 
-    public boolean enqueue( T element ) throws NullPointerException{
+    public boolean enqueue( T element ) throws NullPointerException {
         if (element == null) {
             throw new NullPointerException();
         }

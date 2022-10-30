@@ -2,4 +2,6 @@ out/
 .idea/
 datastructures.iml
 .DS_Store
-
+target/
+.vscode/
+bin/
