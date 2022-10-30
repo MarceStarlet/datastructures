@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 
 public class BinarySearchTreeTest {
 
-    BinarySearchTree<Integer> tree;
+    private static BinarySearchTree<Integer> tree;
 
     @BeforeAll
-    public void setUp() throws Exception {
+    public static void setUp() throws Exception {
         tree = new BinarySearchTree<>();
 
         tree.insert( 10);

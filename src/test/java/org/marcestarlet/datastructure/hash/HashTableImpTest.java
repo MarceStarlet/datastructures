@@ -35,7 +35,7 @@ public class HashTableImpTest {
 	@Test
 	public void differentValuesTest(){
 		// same keys different values
-        HashTable<Float> ht = new HashTableImp<>();
+        HashTable<Float>ht = new HashTableImp<>();
 		
 		ht.put(1, 0.1f);
 		ht.put(2, 0.2f);
@@ -62,7 +62,7 @@ public class HashTableImpTest {
 		ht.put(3, "Ana");
 		ht.put(130, "Pedro");
 		
-		assertEquals("HashTable=[<1,Marce>,<2,Juan>,<130,Pedro>,<3,Ana>]", ht.toString());
+		assertEquals("HashTable=[{1,Marce},{2,Juan},{130,Pedro},{3,Ana}]", ht.toString());
 	}
 
 }
