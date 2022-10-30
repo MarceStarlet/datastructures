@@ -17,7 +17,7 @@ public class BinaryTree<T extends Comparable<T>> {
             return new Node(node);
         }
 
-        //if(!node.equals(data)) {
+        if(!node.equals(data)) {
             if ( node.equals(root.data)){
                 if (left){
                     root.left = new Node(data);
@@ -29,7 +29,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
             insertNode(root.left, node, data, left);
             insertNode(root.right, node, data, left);
-        //}
+        }
 
         return root;
     }
